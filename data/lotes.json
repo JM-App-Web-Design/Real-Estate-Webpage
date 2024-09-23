@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Lote Urbano",
+        "description": "Lote urbano en excelente ubicación.",
+        "image": "img/lote1.jpg"
+    },
+    {
+        "name": "Lote Campestre",
+        "description": "Lote campestre para desarrollo residencial.",
+        "image": "img/lote2.jpg"
+    }
+]

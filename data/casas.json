@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Casa Moderna",
+        "description": "Casa moderna con 3 habitaciones y 2 baños.",
+        "image": "img/casa1.jpg"
+    },
+    {
+        "name": "Casa Colonial",
+        "description": "Casa colonial en el centro histórico, 2 habitaciones.",
+        "image": "img/casa2.jpg"
+    }
+]

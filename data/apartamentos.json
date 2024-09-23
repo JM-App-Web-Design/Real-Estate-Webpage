@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Apartamento Vista al Mar",
+        "description": "Apartamento moderno con vista al mar.",
+        "image": "img/apartamento1.jpg"
+    },
+    {
+        "name": "Apartamento Céntrico",
+        "description": "Apartamento céntrico, cerca de servicios.",
+        "image": "img/apartamento2.jpg"
+    }
+]
