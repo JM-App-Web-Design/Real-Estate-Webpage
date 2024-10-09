@@ -2,11 +2,24 @@
 
 function loadPage(page) {
     fetch(`pages/${page}.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('content').innerHTML = data;
-        })
-        .catch(error => console.log("Error loading page:", error));
+    .then((response) => response.text())
+    .then((data) => {
+    document.getElementById("navbar").innerHTML = data;
+    document.getElementById("content").innerHTML = data;
+    document.getElementById("footer").innerHTML = data;
+    })
+    .catch((error) => console.log("Error loading page:", error));
+}
+
+function loadContent() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+        document.getElementById("myContent").innerHTML = xhttp.responseText;
+        }
+    };
+    xhttp.open("GET", "content.html", true);
+    xhttp.send();
 }
 
 /* function loadService(service) {
@@ -49,4 +62,3 @@ function loadPage(page) {
 }
 
 window.onload = loadInmuebles; */
-
