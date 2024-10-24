@@ -17,7 +17,7 @@ $(document).ready(function() {
         }else if (page === "/arriendos.html") {
             $("#content").load("/pages/arriendos.html");
         } else {
-            $("#content").load("/contact.html");
+            $("#content").load("/pages/contact.html");
         }
         
     });
