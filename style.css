@@ -4,7 +4,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: aqua;
+    background-color: whitesmoke;
 }
 
 .titulo {
@@ -32,7 +32,7 @@ body {
 
 main {
     padding: 20px;
-    background-color: thistle;
+    background-color: whitesmoke;
 }
 
 footer {

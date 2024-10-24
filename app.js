@@ -1,64 +1,25 @@
-// app.js
+$(document).ready(function() {
+    // Cargar la página principal por defecto
+    $("#content").load("pages/home.html");
 
-function loadPage(page) {
-    fetch(`pages/${page}.html`)
-    .then((response) => response.text())
-    .then((data) => {
-    document.getElementById("navbar").innerHTML = data;
-    document.getElementById("content").innerHTML = data;
-    document.getElementById("footer").innerHTML = data;
-    })
-    .catch((error) => console.log("Error loading page:", error));
-}
+    // Manejar los clics en los enlaces del menú para cargar el contenido correspondiente
+    $("#navbar").click(function(e) {
+        e.preventDefault();
+        let page = $(this).attr("href");
 
-function loadContent() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
-    if (xhttp.readyState == 4 && xhttp.status == 200) {
-        document.getElementById("myContent").innerHTML = xhttp.responseText;
+        // Cargar la página según el enlace seleccionado
+        if (page === "/compra_nuevos.html") {
+            $("#content").load("/pages/compra_nuevos.html");
+        } else if (page === "/compra_usados.html") {
+            $("#content").load("/pages/compra_usados.html");
+        } else if (page === "/remates.html") {
+            $("#content").load("/remates.html");
+        }else if (page === "/arriendos.html") {
+            $("#content").load("/pages/arriendos.html");
+        } else {
+            $("#content").load("/contact.html");
         }
-    };
-    xhttp.open("GET", "content.html", true);
-    xhttp.send();
-}
-
-/* function loadService(service) {
-    fetch(`pages/${service}.html`)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('content').innerHTML = data;
-        })
-        .catch(error => console.log("Error loading page:", error));
-} */
-
-// app.js
-
-// Cargar inmuebles desde el servidor
-/* function loadInmuebles() {
-    fetch('http://localhost:3000/inmuebles')
-        .then(response => response.json())
-        .then(data => {
-            const cardsContainer = document.getElementById('cards-section .row');
-            cardsContainer.innerHTML = ''; // Limpiar el contenido anterior
-
-            data.forEach(inmueble => {
-                const cardHTML = `
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="${inmueble.imagen}" class="card-img-top" alt="${inmueble.titulo}">
-                            <div class="card-body">
-                                <h5 class="card-title">${inmueble.titulo}</h5>
-                                <p class="card-text">${inmueble.descripcion}</p>
-                                <p class="card-text">Precio: ${inmueble.precio}</p>
-                                <a href="#" class="btn btn-primary">Ver Detalles</a>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                cardsContainer.innerHTML += cardHTML;
-            });
-        })
-        .catch(error => console.error('Error cargando inmuebles:', error));
-}
-
-window.onload = loadInmuebles; */
+        
+    });
+    
+});
