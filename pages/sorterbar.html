@@ -1,23 +1,54 @@
 <div class="container">
-    <div class="row">
-        <div class="col mt-2">
+    <div class="col">
+        <div class="col">
             <select class="form-select" aria-label="Default select example">
                 <option selected>Clase de Inmueble</option>
                 <option value="1">Casa</option>
                 <option value="2">Apartamento</option>
                 <option value="3">Bodega</option>
+                <option value="4">Lote</option>
+                <option value="5">Local</option>
+                <option value="6">Finca</option>
+                <option value="7">Edificio</option>
             </select>
         </div>
-        <div class="col mt-2">
+        <div class="col">
             <select class="form-select" aria-label="Default select example">
-                <option selected>Tipo de Inmueble</option>
-                <option value="1">Nuevo</option>
-                <option value="2">Usado</option>
-                <option value="3">Remate</option>
+                <option selected>Tipo de Gestión</option>
+                <option value="1">Compra</option>
+                <option value="2">Arriendo</option>
+                <option value="3">Arriendo/Compra</option>
+                <option value="4">Remate</option>
             </select>
         </div>
-        <div class="col mt-2">
+        <div class="col">
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Ubicación</option>
+                <option value="1">Bogotá</option>
+                <option value="2">Funza</option>
+                <option value="3">Mosquera</option>
+                <option value="4">Madrid</option>
+                <option value="5">Cota</option>
+                <option value="6">Chía</option>
+                <option value="7">La Calera</option>
+            </select>
+        </div>
+        <br>
+        <h3>$0 - $500000000</h3>
+        <div class="rangeslider">
+            <input type="range" min="0" max="$500000000" value="5000000" class="myslider" id="sliderRange">
+            <p>Value: <span id="demo"></span></p>
+        </div>
+        <div class="row">
             <button class="btn btn-secondary btn-lg" type="button">Buscar</button>
         </div>
     </div>
+    <script>
+        var rangeslider = document.getElementById("sliderRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = rangeslider.value;
+        rangeslider.oninput = function() {
+            output.innerHTML = this.value;
+        }
+    </script>
 </div>
